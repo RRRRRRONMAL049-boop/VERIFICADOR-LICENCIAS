@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cargar licencias · Gestoría Oasis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;650;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.jpg" alt="Ciudad de México" />
+        <div class="brand-text">
+          <strong>Cargar datos</strong>
+          <span>Licencias</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Verificar</a>
+        <a class="active" href="admin.html">Cargar datos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">Panel</p>
+      <h1>Subir licencias</h1>
+      <p class="lede">Solo cuatro datos: nombre, folio, fecha de expedición y módulo. Después cualquiera puede verificarlos en la página principal.</p>
+    </section>
+
+    <section class="card gate" id="gate">
+      <h2>Clave de acceso</h2>
+      <p class="hint">Por defecto es <strong>oasis2026</strong>. Puedes cambiarla en <code>js/app.js</code>.</p>
+      <form id="login-form">
+        <label for="clave">Clave</label>
+        <input id="clave" type="password" autocomplete="current-password" />
+        <div class="actions">
+          <button class="btn-primary" type="submit">Entrar</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="panel" hidden>
+      <p class="note" id="aviso-guardado">Cargando registros…</p>
+      <section class="card">
+        <h2>Agregar un registro</h2>
+        <form id="alta-form">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" required placeholder="Nombre completo" />
+          <div class="row">
+            <div>
+              <label for="folio-alta">Folio</label>
+              <input id="folio-alta" required placeholder="GRO-2026-1842" />
+            </div>
+            <div>
+              <label for="fecha">Fecha de expedición</label>
+              <input id="fecha" type="date" required />
+            </div>
+          </div>
+          <label for="modulo">Módulo</label>
+          <input id="modulo" required placeholder="Acapulco, Chilpancingo…" list="modulos" />
+          <datalist id="modulos">
+            <option value="Acapulco"></option>
+            <option value="Chilpancingo"></option>
+            <option value="Iguala"></option>
+            <option value="Zihuatanejo"></option>
+            <option value="Taxco"></option>
+          </datalist>
+          <div class="actions">
+            <button class="btn-primary" type="submit">Guardar registro</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Carga masiva</h2>
+        <p class="hint">Pega texto o sube un CSV/JSON. Formato por línea: <code>Nombre, Folio, YYYY-MM-DD, Módulo</code></p>
+        <textarea id="bulk" rows="6" placeholder="Ana López Ruiz, GRO-2026-1001, 2026-02-18, Acapulco"></textarea>
+        <div class="actions file-row">
+          <button class="btn-gold" type="button" id="importar-texto">Importar texto</button>
+          <input type="file" id="archivo" accept=".csv,.txt,.json" />
+        </div>
+        <p class="note">Los cambios quedan en este navegador. Para que se vean en Netlify para todos, descarga el JSON y reemplaza <code>data/licencias.json</code> en el sitio.</p>
+      </section>
+
+      <section class="card">
+        <div class="stats">
+          <span id="total">0 registros</span>
+        </div>
+        <div class="actions" style="margin-top:0;margin-bottom:12px">
+          <button class="btn-gold" type="button" id="exportar">Descargar JSON</button>
+          <button class="btn-ghost" type="button" id="exportar-csv">Descargar CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Folio</th>
+                <th>Fecha expedición</th>
+                <th>Módulo</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="wrap">Gestoría Oasis · Acapulco, Guerrero</footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Validación de Licencias de Conducir</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-ficha">
+  <div class="shell">
+    <header class="ficha-head">
+      <img class="ficha-header-img" src="img/header.jpg" alt="CDMX / SEMOVI" />
+    </header>
+
+    <main>
+      <section class="ficha-card" id="caja-buscar">
+        <div class="ficha-card-title">CONSULTA</div>
+        <form class="ficha-fields" id="consulta-form">
+          <label for="folio">Folio</label>
+          <input id="folio" name="folio" class="ficha-input" autocomplete="off" required />
+          <div class="ficha-actions">
+            <button type="submit">Verificar</button>
+          </div>
+          <p class="ficha-error" id="resultado" hidden>Folio no encontrado</p>
+        </form>
+      </section>
+
+      <section class="ficha-card" id="caja-datos" hidden>
+        <div class="ficha-card-title">DATOS PERSONALES</div>
+        <div class="ficha-fields">
+          <label>Nombre completo</label>
+          <div class="ficha-box" id="out-nombre"></div>
+          <label>Folio</label>
+          <div class="ficha-box" id="out-folio"></div>
+          <label>Fecha expedición</label>
+          <div class="ficha-box" id="out-fecha"></div>
+          <label>Modulo</label>
+          <div class="ficha-box" id="out-modulo"></div>
+        </div>
+      </section>
+
+      <section class="ficha-banner">
+        <img class="ficha-validacion-img" src="img/validacion.jpg" alt="Validación de Licencias de Conducir" />
+      </section>
+    </main>
+
+    <div class="ficha-foot"></div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

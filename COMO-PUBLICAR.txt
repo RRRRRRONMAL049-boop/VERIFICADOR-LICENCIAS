@@ -1,0 +1,25 @@
+PARA QUE LOS REGISTROS SE VEAN EN TODOS LADOS
+==============================================
+
+Arrastrar la carpeta a Netlify NO basta.
+Hay que conectar GitHub. Toma 5 minutos.
+
+1. Entra a https://github.com/new
+2. Nombre del repo: verificador-licencias
+3. Crea el repo (Public)
+4. Sube TODOS los archivos de esta carpeta
+   (botón "uploading an existing file" o Arrastrar)
+
+5. Entra a Netlify → tu sitio
+   semoviccdmx-validartulicencia-gobmx.netlify.app
+6. Site configuration → Build & deploy → Continuous deployment
+7. Link repository → elige verificador-licencias
+8. Publish directory: deja vacío o pon .
+9. Save y Deploy
+
+Cuando termine, entra a /admin.html
+Clave: oasis2026
+Guarda un folio.
+El aviso debe decir: "Guardado. Ya se puede consultar en la página pública."
+
+Eso ya se ve en cualquier celular.
